@@ -1,0 +1,27 @@
+body{
+  word-wrap:break-word;
+}
+img{
+  height: 200px;
+}
+
+.sizes{
+  height:10%;
+  width: 100%;
+  text-align: center;
+}
+
+.list-group{
+  justify-content: space-around;
+  border: none;
+  background-color: inherit;
+}
+
+.list-group-item .list{
+  background-color: inherit;
+}
+
+#bootstrap-overide .list-group-item{
+  background-color: inherit;
+  border: none;
+}
