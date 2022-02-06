@@ -29,7 +29,6 @@ module.exports = function(app, passport, db, ObjectID) {
 // message board routes ===============================================================
 
     app.post('/javahouse', (req, res) => {
-      console.log(req.body.arr)
       db.collection('coffee').save({name: req.body.name, serverArray: req.body.serverArray, completed: false, barista: null}, (err, result) => {
         if (err) return console.log(err)
         console.log('saved to database')
@@ -39,7 +38,6 @@ module.exports = function(app, passport, db, ObjectID) {
 
     app.put('/messages', (req, res) => {
       let userID = ObjectID(req.body.init)
-      console.log(userID)
       db.collection('coffee')
       .findOneAndUpdate({_id: userID}, {
         $set: {
