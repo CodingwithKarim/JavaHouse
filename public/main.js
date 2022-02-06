@@ -10,7 +10,7 @@ Array.from(sugar).forEach(function(element){
   element.addEventListener('click', function(e){
   serverArray[2] = e.target.value
   document.querySelector('.sugar').innerText = e.target.value
-  priceArray[1] = .50
+  e.target.value === 'No Sugar' ? priceArray[1] = 0 : priceArray[1] = 0.5
   document.getElementById('price').innerText = priceArray.
   reduce((a,b)=> a + b,0)
   
@@ -21,7 +21,7 @@ Array.from(ice).forEach(function(element){
   element.addEventListener('click', function(e){
   serverArray[1] = e.target.value
   document.querySelector('.ice').innerText = e.target.value
-  priceArray[2] = .75
+  e.target.value === 'No Ice' ? priceArray[2] = 0 : priceArray[2] = 0.75
   document.getElementById('price').innerText = priceArray.
   reduce((a,b)=> a + b,0)
   })
