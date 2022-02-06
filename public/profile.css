@@ -19,12 +19,12 @@ html {
   }
   
 #con1{
-width: 50%;
+width: 60%;
 float: left;
 }  
 
 #con2{
-width:50%;
+width:40%;
 float: right;
 }
 
@@ -44,4 +44,12 @@ float: right;
 
 .message{
   font-family: 'Architects Daughter', cursive;
+}
+
+.firstName{
+  color: cyan;
+}
+
+.notCompleteMessage{
+  text-decoration: line-through;
 }

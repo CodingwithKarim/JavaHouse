@@ -1,0 +1,41 @@
+#loginBackground{
+    background-image: url("img/coffeepic.jpg");
+    background-attachment: fixed;
+    background-size:cover;
+    background-position: center;
+}
+
+.loginLinks{
+    color: white;
+    font-size: 13px
+}
+
+.loginP{
+    font-size: 13px;
+    color: lightyellow;
+}
+
+.loginLabel{
+    color:antiquewhite;
+}
+
+#signupBackground{
+    background-image: url("img/bubbletea.jpg");
+    background-attachment: fixed;
+    background-size:cover;
+    background-position: center;
+}
+
+.signupP{
+    font-size: 13px;
+    color: ghostwhite;
+}
+
+.signupLinks{
+    font-size: 13px;
+    color: gold;
+}
+
+.signupTitle{
+    color: bisque;
+}

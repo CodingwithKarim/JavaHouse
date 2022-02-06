@@ -1,4 +1,6 @@
-module.exports = function(app, passport, db) {
+const user = require("./models/user");
+
+module.exports = function(app, passport, db, ObjectID) {
 
 // normal routes ===============================================================
 
@@ -28,7 +30,7 @@ module.exports = function(app, passport, db) {
 
     app.post('/javahouse', (req, res) => {
       console.log(req.body.arr)
-      db.collection('coffee').save({name: req.body.name, array: req.body.array, completed: false, barista: null}, (err, result) => {
+      db.collection('coffee').save({name: req.body.name, serverArray: req.body.serverArray, completed: false, barista: null}, (err, result) => {
         if (err) return console.log(err)
         console.log('saved to database')
         res.redirect('/profile')
@@ -36,12 +38,13 @@ module.exports = function(app, passport, db) {
     })
 
     app.put('/messages', (req, res) => {
-      console.log(req.body)
+      let userID = ObjectID(req.body.init)
+      console.log(userID)
       db.collection('coffee')
-      .findOneAndUpdate({array: req.body.array, barista: null, completed: false}, {
+      .findOneAndUpdate({_id: userID}, {
         $set: {
           completed:true,
-          barista: req.body.barista
+          barista: req.user.local.email
         }
       }, {
         sort: {_id: -1},

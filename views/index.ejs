@@ -7,99 +7,164 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link
-      rel="stylesheet"
-      href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"
-    />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Arvo:wght@700&display=swap');
+      </style>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body id="bootstrap-overide">
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Java House</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-     
-          <div class="flex-justify-round">
-            <button class="btn btn-outline-success" type="submit"><a href="/signup">Sign Up</a></button>
-            <button class="btn btn-outline-success" type="submit"><a href= "/login">Login</a></button>
+    <div class="container">
+      <h2  class="text-center text-light pt-4 title">JavaHouse
+        <span>
+        <a href="/signup">
+         <button type="button" class="btn btn-outline-info signup">Apply!</button>
+         </a>
+         <a href="/login">
+        <button type="button" class="btn btn-outline-info login">Login</button>
+        </a>
+        </span>
+      </h2>
+      
+      <div class="row">
+        <!-- left side order list -->
+        <div class="col-md-4 p-4" data-order-lists>
+          <div class="card mb-3">
+            <div class="card-body pt-3 pr-3">
+              <div class="text-right">
+              </div>
+              <h6 class="card-title mb-1 drinkName"></h6>
+              <div class="card-text ice"></div>
+              <div class="card-text sugar"></div>
+            </div>
+            <div class="card-footer text-right py-2">
+               <div class="card-text text-muted">$ <span id="price" data-drink-price></span></div> 
+            </div>
+          </div>
+    
+          <div class="text-right">
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text orderName" id="inputGroup-sizing-sm">Name</span>
+              </div>
+              <input id="name" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <button class="btn btn-outline-primary submitOrder" style="min-width:120px;" data-alpha-pos="checkout">Checkout</button>
           </div>
         </div>
+        <!-- /left side order list-->
+    
+        <!-- right side menu -->
+        <div class="col-md-8 p-4" data-order-panel>
+          <section class="menu mb-4">
+            <div class="card-deck mb-3">
+              <div class="card text-center">
+                <label class="card-body px-2">
+                    <h5 class="card-title">Taro Tea</h5>
+                    <input type="radio" name="drink" value="Taro Tea">
+                  </label>
+              </div>
+    
+              <div class="card text-center">
+                <label class="card-body px-2">
+                    <h5 class="card-title">Green Tea</h5>
+                    <input type="radio" name="drink" value="Green Tea">
+                  </label>
+              </div>
+    
+              <div class="card text-center">
+                <label class="card-body px-2">
+                    <h5 class="card-title">Coffee Tea</h5>
+                    <input type="radio" name="drink" value="Coffee Tea">
+                  </label>
+              </div>
+    
+              <div class="card text-center">
+                <label class="card-body px-2">
+                    <h5 class="card-title">Honey Milk Tea</h5>
+                    <input type="radio" name="drink" value="Honey Milk Tea">
+                  </label>
+              </div>
+            </div>
+    
+            <div class="card-deck">
+              <div class="card text-center">
+                <label class="card-body px-2">
+                    <h5 class="card-title">Oolong Tea</h5>
+                    <input type="radio" name="drink" value="Oolong Tea">
+                  </label>
+              </div>
+    
+              <div class="card text-center">
+                <label class="card-body px-2">
+                    <h5 class="card-title">Coconut Milk Tea</h5>
+                    <input type="radio" name="drink" value="Coconut Milk Tea">
+                  </label>
+              </div>
+    
+              <div class="card text-center">
+                <label class="card-body px-2">
+                    <h5 class="card-title">Almond Milk Tea</h5>
+                    <input type="radio" name="drink" value="Almond Milk Tea">
+                  </label>
+              </div>
+    
+              <div class="card text-center">
+                <label class="card-body px-2">
+                    <h5 class="card-title">Winter Melon Tea</h5>
+                    <input type="radio" name="drink" value="Winter Melon Tea">
+                  </label>
+              </div>
+            </div>
+          </section>
+    
+          <section class="ice mb-4">
+            <label class="d-block text-light">Ice</label>
+            <div class="btn-group btn-group-toggle" data-toggle="data-toggle">
+              <label class="btn btn-outline-primary">
+                  <input type="radio" name="ice" value="No Ice" />No
+                </label>
+              <label class="btn btn-outline-primary">
+                  <input type="radio" name="ice" value="Less Ice" />Less
+                </label>
+              <label class="btn btn-outline-primary">
+                  <input type="radio" name="ice" value="Regular Ice" checked="checked" />Regular
+                </label>
+            </div>
+            
+          </section>
+    
+          <section class="sugar mb-5">
+            <label class="d-block text-light">Sugar</label>
+            <div class="btn-group btn-group-toggle" data-toggle="toggle">
+              <label class="btn btn-outline-info">
+                  <input type="radio" name="sugar" value="No Sugar" />No
+                </label>
+              <label class="btn btn-outline-info">
+                  <input type="radio" name="sugar" value="A Little Sugar" />A Little
+                </label>
+              <label class="btn btn-outline-info">
+                  <input type="radio" name="sugar" value="Half Sugar" />Half
+                </label>
+              <label class="btn btn-outline-info">
+                  <input type="radio" name="sugar" value="Less Sugar" />Less
+                </label>
+              <label class="btn btn-outline-info">
+                  <input type="radio" name="sugar" value="Regular Sugar" checked="checked" />Regular
+                </label>
+            </div>
+          </section>
+    
+        </div>
+        <!-- /right side menu -->
       </div>
-    </nav>
-    <div class="container">
-      <div class="jumbotron text-center">
-       <div class="sizes"> 
-        <ul class="list-group list-group-horizontal">
-          <li class="list-group-item list"><button id="Short" class="btn btn-outline-primary btn-lg size">Short</button></li>
-          <li class="list-group-item list"><button id="Tall" class="btn btn-outline-primary btn-lg size">Tall</button></li>
-          <li class="list-group-item list"><button id="Grande" class="btn btn-outline-primary btn-lg size">Grande</button></li>
-          <li class="list-group-item list"><button id="Venti" class="btn btn-outline-primary btn-lg size">Venti</button></li>
-        </ul>
-        
-       </div>
-       <div class="sizes"> 
-        <ul class="list-group list-group-horizontal">
-          <li class="list-group-item list"><button id="Iced-Coffee" class="btn btn-outline-primary btn-lg coffee">Iced Coffee</button></li>
-          <li class="list-group-item list"><button id="tall" class="btn btn-outline-primary btn-lg coffee">Hot Coffee</button></li>
-          <li class="list-group-item list"><button id="grande" class="btn btn-outline-primary btn-lg coffee">Iced Latte</button></li>
-          <li class="list-group-item list"><button id="venti" class="btn btn-outline-primary btn-lg size coffee">Hot Latte</button></li>
-        </ul>
-        
-       </div>
-
-       <div class="sizes"> 
-        <ul class="list-group list-group-horizontal">
-          <li class="list-group-item list"><button id="short" class="btn btn-outline-primary btn-lg diary">Whole Milk</button></li>
-          <li class="list-group-item list"><button id="tall" class="btn btn-outline-primary btn-lg diary">Skim Milk</button></li>
-          <li class="list-group-item list"><button id="grande" class="btn btn-outline-primary btn-lg diary">Almond Milk</button></li>
-          <li class="list-group-item list"><button id="venti" class="btn btn-outline-primary btn-lg diary">Oat Milk</button></li>
-        </ul>
-        
-       </div>
-
-       <div class="sizes"> 
-        <ul class="list-group list-group-horizontal">
-          <li class="list-group-item list"><button id="short" class="btn btn-outline-primary btn-lg flavor">Caramel</button></li>
-          <li class="list-group-item list"><button id="tall" class="btn btn-outline-primary btn-lg flavor">Vanilla</button></li>
-          <li class="list-group-item list"><button id="grande" class="btn btn-outline-primary btn-lg flavor">Mocha</button></li>
-          <li class="list-group-item list"><button id="venti" class="btn btn-outline-primary btn-lg flavor">Pumpkin</button></li>
-        </ul>
-        
-        
-       </div>
-       
-     <div class="jumbotron text-center">
-      <form>
-      <label>Name:</label>
-        <input class="input" type="text">
-        <button id="submit">Place Order</button>
-        </form>
-      </div>
-      </div>
-
-      
-      
-
-      
-           <!-- <form action="/javahouse" method="post">
-          <label>Name</label>
-          <input type="text" name="name" />
-          <label>Order</label>
-          <input type="text" name="order" />
-          <button type="submit">Submit</button>
-        </form>  -->
+      <!-- /.row -->
+    </div>
 
 
 
 
     </div>
+
     <script src="main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">

@@ -27,11 +27,14 @@
     <h3 class="orders">Orders</h3>
     <ul class="messages" class="list-group">
     <div class="container" id = 'con1'>
+    <% console.log(messages) %>
     <% for(var i=0; i<messages.length; i++) {%>
       <% if(messages[i].completed === false) {%>
       <li class="message" class="list-group-item">
-        <span><%= messages[i].array %></span>
-        <span><i class="fas fa-check-square" data-name="<%= messages[i].array%>" data-value="<%= user.local.email %>" aria-hidden="true"></i></span>
+        <span>
+          <span><span class="firstName"><%=`${messages[i].name}: `%></span><%=`${messages[i].serverArray[0]} with ${messages[i].serverArray[1]} & ${messages[i].serverArray[2]}`%>
+        </span>
+        <span><i class="fas fa-check-square" data-name="<%= messages[i]._id%>" data-array="<%= messages[i].serverArray%>" data-barista= "<%= user.local.email %>"  aria-hidden="true"></i></span>
       </li>
     <% } %>
     <% } %>
@@ -39,8 +42,8 @@
     <div class="container" id = 'con2'>
     <% for(var i=0; i<messages.length; i++) {%>
       <% if(messages[i].completed === true) {%>
-      <li class="message">
-        <span><%= messages[i].barista + ": " + messages[i].array %></span>
+      <li class="notCompleteMessage">
+        <span><%= `Completed By: `+ messages[i].barista + ": " + messages[i].serverArray %></span>
       </li>
     <% } %>
     <% } %>
@@ -51,11 +54,7 @@
   </div> 
 </main>
 
-<footer class="footer">
-  <div class="container">
-    <span class="text-muted">Place sticky footer content here.</span>
-  </div>
-</footer>
+
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
